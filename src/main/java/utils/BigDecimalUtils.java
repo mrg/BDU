@@ -3,9 +3,7 @@ package utils;
 import static java.math.BigDecimal.ZERO;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
@@ -14,28 +12,6 @@ import org.apache.commons.logging.LogFactory;
 public class BigDecimalUtils
 {
     private static final Log log = LogFactory.getLog(BigDecimalUtils.class);
-
-    /**
-     * No instances required.
-     */
-    private BigDecimalUtils() { } // NOSONAR
-
-
-    // Returns an list of all values in a map for the specified key
-    public static List<BigDecimal> allValuesForKey(List<Map<String, BigDecimal>> sourceList, String key)
-    {
-        List<BigDecimal> valueList = null;
-
-        if (sourceList != null)
-        {
-            valueList = new ArrayList<BigDecimal>();
-
-            for (Map<String, BigDecimal> peMap : sourceList)
-                valueList.add(peMap.get(key));
-        }
-
-        return valueList;
-    }
 
     public static BigDecimal getTotal(List<BigDecimal> valuesToSum)
     {
